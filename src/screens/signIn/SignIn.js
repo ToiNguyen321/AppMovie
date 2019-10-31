@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, KeyboardAvoidingView } from 'react-native';
 import Header from '../../components/Header';
+
 import { colors, sizeText, fonts } from '../../common/Custom';
 import InputTextApp from '../../components/InputTextApp';
 import ButtonApp from '../../components/ButtonApp';
+import KeyBoardDismiss from '../../components/KeyBoardDismiss';
 
 export default class SignIn extends Component {
     constructor(props) {
@@ -17,37 +19,38 @@ export default class SignIn extends Component {
     render() {
         let { phone, password } = this.state
         return (
-            // <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
-            <KeyboardAvoidingView style={styles.fill} behavior="height" enabled>
-                <Header back={true} title={"Sign In"} navigation={this.props.navigation} />
-                <View style={[styles.viewLogo]}>
-                    <Image style={styles.image} source={require('../../assets/images/LogoOpen.png')} />
-                </View>
-                <View style={[styles.fill, styles.container]}>
-                    <Text style={styles.textTitle}><Text style={styles.textHello}>Hello!</Text> Create your account and enjoy</Text>
-                    <View style={[styles.fill, styles.form]}>
-                        <InputTextApp 
-                            value={phone} 
-                            placeholder={"Phone Number"} 
-                            onChangeText={(phone) => this.setState({phone})}
-                            icon={"phone"}
-                        />
-                        <InputTextApp 
-                            value={password} 
-                            placeholder={"Password"} 
-                            onChangeText={(password) => this.setState({password})}
-                            icon={"lock"}
-                        />
-                        <ButtonApp title="Sign In" />
+            <KeyBoardDismiss>
+                <View style={styles.fill}>
+                    <Header back={true} title={"Sign In"} navigation={this.props.navigation} />
+                    <View style={[styles.viewLogo]}>
+                        <Image style={styles.image} source={require('../../assets/images/LogoOpen.png')} />
                     </View>
-                    <Text 
-                        onPress={()=>this.props.navigation.navigate('Register')}
-                        style={styles.textSignIn}
-                    >
-                        Create Account
-                    </Text>
+                    <View style={[styles.fill, styles.container]}>
+                        <Text style={styles.textTitle}><Text style={styles.textHello}>Hello!</Text> Create your account and enjoy</Text>
+                        <View style={[styles.fill, styles.form]}>
+                            <InputTextApp
+                                value={phone}
+                                placeholder={"Phone Number"}
+                                onChangeText={(phone) => this.setState({ phone })}
+                                icon={"phone"}
+                            />
+                            <InputTextApp
+                                value={password}
+                                placeholder={"Password"}
+                                onChangeText={(password) => this.setState({ password })}
+                                icon={"lock"}
+                            />
+                            <ButtonApp title="Sign In" onPress={()=>this.props.navigation.navigate('Home')} />
+                        </View>
+                        <Text
+                            onPress={() => this.props.navigation.navigate('Register')}
+                            style={styles.textSignIn}
+                        >
+                            Create Account
+                        </Text>
+                    </View>
                 </View>
-                </KeyboardAvoidingView>
+            </KeyBoardDismiss>
         );
     }
 }
@@ -69,7 +72,7 @@ const styles = StyleSheet.create({
         height: '100%',
         resizeMode: 'contain'
     },
-    container:{
+    container: {
         backgroundColor: colors.box,
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
@@ -92,12 +95,12 @@ const styles = StyleSheet.create({
     form: {
         justifyContent: 'center'
     },
-    textSignIn:{
+    textSignIn: {
         height: 40,
         color: colors.text3,
         textAlign: 'center',
         textAlignVertical: 'center',
-        borderTopWidth: 1, 
+        borderTopWidth: 1,
         borderTopColor: colors.border,
-     }
+    }
 })

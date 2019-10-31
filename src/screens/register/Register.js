@@ -22,43 +22,45 @@ export default class Register extends Component {
       return (
          <View style={styles.fill}>
             <Header back={true} title={"Create Account"} navigation={this.props.navigation} />
-            <ScrollView 
+            <ScrollView
                contentContainerStyle={styles.scrollView}
             >
-               <Text style={styles.textTitle}><Text style={styles.textHello}>Hello!</Text> Create your account and enjoy</Text>
-               <View style={{flex: 1, justifyContent: 'center'}}>
-                  <InputTextApp 
-                     value={this.state.username} 
-                     placeholder={"User Name"} 
-                     onChangeText={(username) => this.setState({username})}
+
+               <View style={{ flex: 1, justifyContent: 'center' }}>
+                  <Text style={styles.textTitle}><Text style={styles.textHello}>Hello!</Text> Create your account and enjoy</Text>
+                  <InputTextApp
+                     value={this.state.username}
+                     placeholder={"User Name"}
+                     onChangeText={(username) => this.setState({ username })}
                   />
-                  <InputTextApp 
-                     value={this.state.email} 
-                     placeholder={"Email Address"} 
-                     onChangeText={(email) => this.setState({email})}
+                  <InputTextApp
+                     value={this.state.email}
+                     placeholder={"Email Address"}
+                     onChangeText={(email) => this.setState({ email })}
                   />
-                  <InputTextApp 
-                     value={this.state.phone} 
-                     placeholder={"Phone Number"} 
-                     onChangeText={(phone) => this.setState({phone})}
+                  <InputTextApp
+                     value={this.state.phone}
+                     placeholder={"Phone Number"}
+                     onChangeText={(phone) => this.setState({ phone })}
                   />
-                  <InputTextApp 
-                     value={this.state.password} 
-                     placeholder={"Password"} 
-                     onChangeText={(password) => this.setState({password})}
+                  <InputTextApp
+                     value={this.state.password}
+                     placeholder={"Password"}
+                     onChangeText={(password) => this.setState({ password })}
                   />
-                  <InputTextApp 
-                     value={this.state.confirmPassword} 
-                     placeholder={"Confirm Password"} 
-                     onChangeText={(confirmPassword) => this.setState({confirmPassword})}
+                  <InputTextApp
+                     value={this.state.confirmPassword}
+                     placeholder={"Confirm Password"}
+                     onChangeText={(confirmPassword) => this.setState({ confirmPassword })}
                   />
                   <ButtonApp title="Create Account" />
+                  <Text
+                     onPress={() => this.props.navigation.navigate('SignIn')}
+                     style={styles.textSignIn}>
+                     SIGN IN
+                  </Text>
                </View>
-               <Text 
-                  onPress={()=>this.props.navigation.navigate('SignIn')}
-                  style={styles.textSignIn}>
-                  SIGN IN
-               </Text>
+
             </ScrollView>
          </View>
       );
@@ -68,8 +70,8 @@ const styles = StyleSheet.create({
    fill: {
       flex: 1,
    },
-   scrollView: { 
-      justifyContent: 'space-between', 
+   scrollView: {
+      justifyContent: 'space-between',
       flex: 1,
    },
    textTitle: {
@@ -86,12 +88,12 @@ const styles = StyleSheet.create({
       fontSize: sizeText.textBigMax,
       fontFamily: fonts.Bahij_TheSansArabic,
    },
-   textSignIn:{
+   textSignIn: {
       height: 40,
       color: colors.text3,
       textAlign: 'center',
       textAlignVertical: 'center',
-      borderTopWidth: 1, 
+      borderTopWidth: 1,
       borderTopColor: colors.border,
    }
 })
