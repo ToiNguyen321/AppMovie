@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import GetTicketTrailer from './GetTicketTrailer';
+import ProfileTickets from './ProfileTickets';
+import ButtonGetTickets from './ButtonGetTickets';
+import BoxCast from './BoxCast';
 
 export default class GetTickets extends Component {
   constructor(props) {
@@ -11,9 +14,14 @@ export default class GetTickets extends Component {
 
   render() {
     return (
-      <ScrollView>
-        <GetTicketTrailer />
-      </ScrollView>
+      <View style={{flex: 1}}>
+        <ScrollView>
+          <GetTicketTrailer />
+          <ProfileTickets />
+          <BoxCast />         
+        </ScrollView>
+        <ButtonGetTickets />
+      </View>
     );
   }
 }

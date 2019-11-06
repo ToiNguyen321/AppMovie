@@ -40,7 +40,7 @@ const stackApp = createStackNavigator(
       GetTickets: GetTickets
    },
    {
-      initialRouteName: 'Home',
+      initialRouteName: 'GetTickets',
       headerMode: 'none',
       mode: 'card',
       transparentCard: true

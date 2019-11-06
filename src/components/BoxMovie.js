@@ -1,19 +1,24 @@
 import React from 'react';
 import { ScrollView, TouchableOpacity, View, Text, StyleSheet } from 'react-native';
 import { colors, sizeText, fonts } from '../common/Custom';
-const defaultOnPress = () =>{
+const defaultOnPress = () => {
     console.log("No OnPress")
 }
 
-export default BoxMovie = ({ children, _onPress = defaultOnPress, title = 'BoxMovie' }) => (
-    <View style={styles.container}>
+export default BoxMovie = ({ children, _onPress = defaultOnPress, title = 'BoxMovie', seeAll = true, marginTop = 25 }) => (
+    <View style={{marginTop}}>
         <View style={styles.viewTop}>
             <Text style={styles.topTitle}>{title}</Text>
-            <TouchableOpacity
-                onPress={ _onPress}
-            >
-                <Text style={styles.topSee} >See All</Text>
-            </TouchableOpacity>
+            {
+                seeAll
+                &&
+                <TouchableOpacity
+                    onPress={_onPress}
+                >
+                    <Text style={styles.topSee}>See All</Text>
+                </TouchableOpacity>
+            }
+
         </View>
         <ScrollView
             horizontal
@@ -40,7 +45,7 @@ const styles = StyleSheet.create({
         fontSize: sizeText.textButton,
         fontFamily: fonts.Bahij_TheSansArabic_SemiBold
     },
-    topSee:{
+    topSee: {
         color: colors.text2,
         fontSize: sizeText.textNormal,
         fontFamily: fonts.Bahij_TheSansArabic_SemiBold
