@@ -23,7 +23,7 @@ const Scaler = posed.View({
   inactive: { scale: 1 }
 });
 
-const S = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     height: 50,
@@ -66,10 +66,10 @@ export default TabBarComponents = props => {
   const { routes, index: activeRouteIndex } = navigation.state;
 
   return (
-    <View style={S.container}>
+    <View style={styles.container}>
       <View style={StyleSheet.absoluteFillObject}>
-        <SpotLight style={S.spotLight} pose={`route${activeRouteIndex}`}>
-          <View style={S.spotLightInner} />
+        <SpotLight style={styles.spotLight} pose={`route${activeRouteIndex}`}>
+          <View style={styles.spotLightInner} />
         </SpotLight>
       </View>
 
@@ -80,7 +80,7 @@ export default TabBarComponents = props => {
         return (
           <TouchableOpacity
             key={routeIndex}
-            style={S.tabButton}
+            style={styles.tabButton}
             onPress={() => {
               onTabPress({ route });
             }}
@@ -91,7 +91,7 @@ export default TabBarComponents = props => {
           >
             <Scaler
               pose={isRouteActive ? "active" : "inactive"}
-              style={S.scaler}
+              style={styles.scaler}
             >
               {renderIcon({ route, focused: isRouteActive, tintColor })}
             </Scaler>

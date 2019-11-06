@@ -19,5 +19,8 @@ export const colors = {
     text2: '#9E9EBC',
     text3: '#E15050',
     border: '#646478',
-    box: '#272733'
+    box: '#272733',
+    iconRate: '#EEC43A',
+    iconNoRate: '#9E9EBC',
+    transparent: 'transparent'
 }

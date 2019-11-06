@@ -12,6 +12,7 @@ import Message from "../screens/message/Message";
 import Tickets from "../screens/tickets/Tickets";
 import TabBarComponents from './TabBarComponets'
 import { colors } from "../common/Custom";
+import GetTickets from "../screens/getTickets/GetTickets";
 
 
 const tabBottomNavigation = createBottomTabNavigator(
@@ -35,7 +36,8 @@ const stackApp = createStackNavigator(
       OpenApp: OpenApp,
       Register: Register,
       SignIn: SignIn,
-      Home: tabBottomNavigation
+      Home: tabBottomNavigation,
+      GetTickets: GetTickets
    },
    {
       initialRouteName: 'Home',

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ImageBackground, StyleSheet } from 'react-native';
+import { ImageBackground, StatusBar } from 'react-native';
 import AppContainer from './navigators';
 
 
@@ -21,6 +21,7 @@ export default class App extends Component {
         }}
         source={require('./assets/images/Background.png')}
       >
+        <StatusBar backgroundColor="transparent" translucent />
         <AppContainer style={{ backgroundColor: 'transparent' }} ref='navigator'/>
       </ImageBackground>
     );
