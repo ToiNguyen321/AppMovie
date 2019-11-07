@@ -15,7 +15,7 @@ const BoxCast = ({
     <BoxMovie
         title={"Cast"}
         seeAll={false}
-        marginTop={20}
+        marginTop={25}
     >
         {
             data.map((item, index) => <ItemBoxCast length={data.length} index={index} key={item.id} item={item} />)

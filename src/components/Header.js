@@ -26,7 +26,7 @@ export default class Header extends Component {
             <Icon size={22} name="left" color='#FFF' />
           </TouchableOpacity>
         }
-        <Text style={styles.title}> Header </Text>
+        <Text style={styles.title}> {title || 'Header'} </Text>
       </View>
     );
   }
@@ -38,6 +38,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 15,
+    paddingTop: 45,
+    paddingBottom: 35,
   },
   title: {
     color: colors.text1,

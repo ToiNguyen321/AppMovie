@@ -10,19 +10,22 @@ import Home from "../screens/home/Home";
 import Notification from "../screens/notification/Notification";
 import Message from "../screens/message/Message";
 import Tickets from "../screens/tickets/Tickets";
-import TabBarComponents from './TabBarComponets'
+import TabBarComponents from './TabBarComponents'
 import { colors } from "../common/Custom";
 import GetTickets from "../screens/getTickets/GetTickets";
 
 
 const tabBottomNavigation = createBottomTabNavigator(
   {
-      Home,
-      Tickets,
+      Home: Home,
+      Tickets: {
+         screen: Tickets
+      },
       Notification,
       Message
   },
   {
+     initialRouteName: 'Tickets',
      tabBarComponent: TabBarComponents,
       defaultNavigationOptions: configIconTab,
        tabBarOptions: {
@@ -40,7 +43,7 @@ const stackApp = createStackNavigator(
       GetTickets: GetTickets
    },
    {
-      initialRouteName: 'GetTickets',
+      initialRouteName: 'Home',
       headerMode: 'none',
       mode: 'card',
       transparentCard: true

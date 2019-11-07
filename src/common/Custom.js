@@ -20,6 +20,9 @@ export const colors = {
     text3: '#E15050',
     border: '#646478',
     box: '#272733',
+    box2: '#2F2F3B',
+    boxDateTime: '#646478',
+    boxDateTimeActive: '#5B87B2',
     iconRate: '#EEC43A',
     iconNoRate: '#9E9EBC',
     transparent: 'transparent'

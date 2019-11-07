@@ -2,16 +2,18 @@ import React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { colors, fonts, sizeText } from '../../common/Custom';
 import Fontisto from 'react-native-vector-icons/Fontisto';
-const ButtonGetTickets = () => (
-    // <View></View>
-    <TouchableOpacity
-        style={styles.container}
-    >
-        <View style={styles.content}>
-            <Fontisto name="train-ticket" size={22} color={colors.text1}/>
-            <Text style={styles.textButton}>Get Tickets</Text>
-        </View>
-    </TouchableOpacity>
+const ButtonGetTickets = (props) => (
+    <View style={styles.container}>
+        <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={props._showChoose}
+        >
+            <View style={styles.content}>
+                <Fontisto name="train-ticket" size={22} color={colors.text1}/>
+                <Text style={styles.textButton}>Get Tickets</Text>
+            </View>
+        </TouchableOpacity>
+    </View>
 );
 
 export default ButtonGetTickets;

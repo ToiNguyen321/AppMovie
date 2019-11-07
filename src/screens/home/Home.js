@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, StatusBar } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import InputSearch from './InputSearch';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -25,9 +25,13 @@ export default class Home extends Component {
         >
           <View style={styles.headerHome}>
             <View style={{ justifyContent: 'center', marginRight: 10 }}>
-              <FontAwesome name="vcard-o" size={25} color={colors.iconTabNoActive} />
+              <FontAwesome 
+                name="vcard-o" 
+                size={25} 
+                color={colors.iconTabNoActive} 
+              />
             </View>
-            <View style={styles.fill}>
+            <View style={styles.fill2}>
               <InputSearch
                 value={textSearch}
                 placeholder={"Search here"}
@@ -49,13 +53,16 @@ const styles = StyleSheet.create({
   fill: {
     flex: 1,
     // paddingTop: 25,
+    paddingTop: 25,
+  },
+  fill2: {
+    flex: 1,
   },
   headerHome: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    // marginTop: 15,
-
+    marginTop: 20,
     marginHorizontal: 15,
   },
   contentContainerStyle: {

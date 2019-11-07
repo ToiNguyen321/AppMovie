@@ -11,11 +11,9 @@ export default GetTicketTrailer = (props) => (
 const styles = StyleSheet.create({
     container: {
         height: 250,
-        // backgroundColor: 'rgba(29,29,29,0)'
     },
     video: {
         width: '100%',
         height: '100%',
-        // resizeMode: 'contain'
     }
 })
